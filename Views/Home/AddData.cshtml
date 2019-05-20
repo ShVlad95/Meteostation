@@ -1,0 +1,53 @@
+﻿@model test.Models.Datas
+
+@{
+    ViewData["Title"] = "AddData";
+}
+
+<h2>AddData</h2>
+
+<h4>MeteStation</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddDataAsync">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Temperature" class="control-label"></label>
+                <input asp-for="Temperature" class="form-control" />
+                <span asp-validation-for="Temperature" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Humidity" class="control-label"></label>
+                <input asp-for="Humidity" class="form-control" />
+                <span asp-validation-for="Humidity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Co" class="control-label"></label>
+                <input asp-for="Co" class="form-control" />
+                <span asp-validation-for="Co" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pressure" class="control-label"></label>
+                <input asp-for="Pressure" class="form-control" />
+                <span asp-validation-for="Pressure" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataSaveTime" class="control-label"></label>
+                <input asp-for="DataSaveTime" class="form-control" />
+                <span asp-validation-for="DataSaveTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

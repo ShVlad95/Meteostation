@@ -1,0 +1,38 @@
+﻿@model ICollection<Datas>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    <div>
+        <h1 class="text-center">Metestation server is running...</h1>
+    </div>
+    <div class="myTable">
+        <table class="table">
+            <thead>
+                <tr class="row">
+                    <th scope="col">Id</th>
+                    <th scope="col">Влажность</th>
+                    <th scope="col">Температура</th>
+                    <th scope="col">Давление</th>
+                    <th scope="col">Угарный газ</th>
+                    <th scope="col">Дата сохранения</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var row in Model)
+                {
+                    <tr class="row">
+                        <th scope="row">@row.Id</th>
+                        <td>@row.Humidity</td>
+                        <td>@row.Temperature</td>
+                        <td>@row.Pressure</td>
+                        <td>@row.Co</td>
+                        <td>@row.DataSaveTime.Value.ToShortDateString()</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
